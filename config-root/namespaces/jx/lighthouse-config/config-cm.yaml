@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - nikolinmajmari/google-cloud-jenkinx-cluster-repo-1
-      target_url: http://lighthouse-jx./merge/status
+      target_url: http://lighthouse-jx.35.224.133.92.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null

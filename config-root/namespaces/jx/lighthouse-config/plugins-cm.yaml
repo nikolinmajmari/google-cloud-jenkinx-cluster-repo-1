@@ -6,6 +6,10 @@ data:
       repos:
       - nikolinmajmari/google-cloud-jenkinx-cluster-repo-1
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - nikolinmajmari/google-cloud-jenkinx-golang
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -21,12 +25,31 @@ data:
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
         name: lighthouse-webui-plugin
+      nikolinmajmari/google-cloud-jenkinx-golang:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
     label:
       additional_labels: null
     owners: {}
     plugins:
       nikolinmajmari/google-cloud-jenkinx-cluster-repo-1:
       - config-updater
+      - approve
+      - assign
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - cat
+      - dog
+      - pony
+      nikolinmajmari/google-cloud-jenkinx-golang:
       - approve
       - assign
       - help
@@ -52,6 +75,11 @@ data:
     - repos:
       - nikolinmajmari/google-cloud-jenkinx-cluster-repo-1
       trusted_org: nikolinmajmari
+    - repos:
+      - nikolinmajmari/google-cloud-jenkinx-golang
+      trusted_org: nikolinmajmari
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
